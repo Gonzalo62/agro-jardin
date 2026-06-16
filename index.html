@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgroJardín | Herramientas y Productos Agrícolas</title>
+    <style>
+        :root {
+            --primary: #2d6a4f;
+            --secondary: #40916c;
+            --accent: #d8f3dc;
+            --text-dark: #1b4332;
+            --text-light: #ffffff;
+            --bg-light: #f8f9fa;
+            --shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+
+        header {
+            background-color: var(--primary);
+            color: var(--text-light);
+            padding: 1rem 5%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: var(--shadow);
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+            transition: 0.3s;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(45, 106, 79, 0.8), rgba(45, 106, 79, 0.8)), 
+                        url('https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=1920');
+            background-size: cover;
+            background-position: center;
+            height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--text-light);
+            padding: 0 1rem;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+        }
+
+        .btn {
+            background-color: var(--secondary);
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: var(--accent);
+            color: var(--text-dark);
+        }
+
+        .categories {
+            padding: 4rem 5%;
+            text-align: center;
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .category-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s;
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .products {
+            padding: 4rem 5%;
+            background-color: white;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 3rem;
+            color: var(--primary);
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .product-card {
+            border: 1px solid #eee;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: 0.3s;
+            background: var(--bg-light);
+        }
+
+        .product-card:hover {
+            box-shadow: var(--shadow);
+        }
+
+        .product-img {
+            width: 100%;
+            height: 200px;
+            background-color: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 3rem;
+        }
+
+        .product-info {
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .product-price {
+            color: var(--primary);
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin: 0.5rem 0;
+        }
+
+        footer {
+            background-color: var(--text-dark);
+            color: var(--text-light);
+            padding: 3rem 5%;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            nav ul { display: none; }
+            .hero h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">🌱 AgroJardín</div>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#categorias">Categorías</a></li>
+                <li><a href="#productos">Productos</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero" id="inicio">
+        <h1>Cultiva tu pasión</h1>
+        <p>Encuentra las mejores herramientas y productos para tu jardín y cultivos agrícolas</p>
+        <a href="#productos" class="btn">Ver Productos</a>
+    </section>
+
+    <section class="categories" id="categorias">
+        <h2 class="section-title">Nuestras Categorías</h2>
+        <div class="category-grid">
+            <div class="category-card">
+                <div style="font-size: 3rem; margin-bottom: 1rem;">🛠️</div>
+                <h3>Herramientas</h3>
+                <p>Palas, rastrillos y más</p>
+            </div>
+            <div class="category-card">
+                <div style="font-size: 3rem; margin-bottom: 1rem;">🌱</div>
+                <h3>Semillas</h3>
+                <p>Variedades orgánicas</p>
+            </div>
+            <div class="category-card">
+                <div style="font-size: 3rem; margin-bottom: 1rem;">💧</div>
+                <h3>Riego</h3>
+                <p>Sistemas completos</p>
+            </div>
+            <div class="category-card">
+                <div style="font-size: 3rem; margin-bottom: 1rem;">🧪</div>
+                <h3>Fertilizantes</h3>
+                <p>Abonos orgánicos</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="products" id="productos">
+        <h2 class="section-title">Productos Destacados</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <div class="product-img">🌿</div>
+                <div class="product-info">
+                    <h3>Pala de Jardín</h3>
+                    <p class="product-price">$25.00</p>
+                    <button class="btn">Agregar</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-img">✂️</div>
+                <div class="product-info">
+                    <h3>Tijeras de Podar</h3>
+                    <p class="product-price">$35.00</p>
+                    <button class="btn">Agregar</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-img"></div>
+                <div class="product-info">
+                    <h3>Pack Semillas</h3>
+                    <p class="product-price">$12.00</p>
+                    <button class="btn">Agregar</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-img">🌾</div>
+                <div class="product-info">
+                    <h3>Abono Orgánico 5kg</h3>
+                    <p class="product-price">$18.00</p>
+                    <button class="btn">Agregar</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contacto">
+        <p>&copy; 2026 AgroJardín. Todos los derechos reservados.</p>
+        <p>📧 info@agrojardin.com | 📞 +1 234 567 890</p>
+    </footer>
+</body>
+</html>
